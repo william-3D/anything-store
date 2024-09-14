@@ -1,0 +1,19 @@
+.navbar-div {
+    @apply navbar bg-background border-solid border border-black rounded-xl;
+
+    .navbar-start {
+        @apply flex-1;
+
+        .navbar-logo {
+            @apply btn btn-ghost text-xl;
+        }
+    }
+
+    .navbar-end {
+        @apply flex-none;
+
+        .navbar-items-container {
+            @apply menu menu-horizontal px-1 items-center;
+        }
+    }
+}
