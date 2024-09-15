@@ -8,7 +8,7 @@
   }
 
   #root {
-    @apply min-h-screen !p-5;
+    @apply min-h-screen !p-5 md:mx-20 xl:mx-60;
   }
   body {
     @apply bg-background;
