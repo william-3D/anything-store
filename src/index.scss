@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer based {
+@layer base {
   * {
     @apply text-black text-base;
   }
@@ -18,5 +18,9 @@
 @layer components {
   .page-container {
     @apply m-4 flex flex-col gap-16;
+  }
+
+  .global-border {
+    @apply border-solid border border-black;
   }
 }
