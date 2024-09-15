@@ -1,8 +1,14 @@
 .navbar-div {
-    @apply navbar bg-background border-solid border border-black rounded-xl;
+    @apply navbar bg-background rounded-xl relative overflow-visible h-16;
+    transition: height 0.3s ease-in-out;
+    z-index: 1000;
+
+    .navbar-content {
+        @apply flex justify-between w-full h-16;
+    }
 
     .navbar-start {
-        @apply flex-1;
+        @apply w-max;
 
         .navbar-logo {
             @apply btn btn-ghost text-xl;
@@ -10,10 +16,38 @@
     }
 
     .navbar-end {
-        @apply flex-none;
+        @apply flex-none w-max;
 
         .navbar-items-container {
-            @apply menu menu-horizontal px-1 items-center;
+            @apply menu menu-horizontal items-center;
         }
     }
+
+    &.expanded-navbar {
+        height: 300px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: height 0.5s ease;
+        @apply flex-col;
+        z-index: 1001;
+    }
+
+    .expanded-content {
+        @apply flex flex-col gap-4 absolute top-16 w-full bg-white;
+        z-index: 1001;
+
+        .cart-summary {
+            @apply p-8 rounded-lg w-full;
+        }
+    }
+}
+
+// Overlay for page when navbar is expanded
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999; // Lower than expanded content
 }
